@@ -1,23 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-const nombres = [
-  'Uriel',
-  'Kevin',
-  'Juan',
-  'Pedro'
-]
+// const App = () => {
+//   return <div>
+    
+//   </div>
+// };
 
-const Nombres = () => {
-  return <ul>{
-    nombres.map((nombre, index) => <li key={index}> {nombre}</li>)
-  }</ul>
+class App extends Component{
+  render(){
+    return <h1>Hola mundillo!!!</h1>
+  }
 }
-
-const App = () => {
-  return <div>
-    <div><Nombres></Nombres></div>
-  </div>
-};
 
 render(<App />, document.getElementById('react-app'));
