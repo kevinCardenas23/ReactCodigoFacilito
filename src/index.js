@@ -1,34 +1,19 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { render } from 'react-dom';
 
-// class App extends Component{
-//   render(){
-//     return <h1>Hola mundillo!!!</h1>
-//   }
-// }
+const Button = ()=>{
+  const [conteo, setCounter] = useState(0);
 
-const nombres = [
-  'Uriel',
-  'Pedro',
-  'Juan',
-  'Felipe',
-  'Andres'
-]
-
-// const Saludar = ({nombre, idioma}) =>{
-const Saludar = ({nombre, idioma = 'es'}) =>{
-  const saludo = idioma === 'en' ? 'Hola' : 'Hello';
-  return <p>{saludo} {nombre}</p>
-}
-
-Saludar.defaultProps = {
-  idioma: 'es'
+  return (
+    <div>
+      <p>Presionado: {conteo}</p>
+      <button onClick={()=>setCounter(conteo+1)}>Clickeame!!!!</button>
+    </div>
+  )
 }
 
 const App = () => {
-  return <div>
-    <Saludar nombre='Kevin' idioma='es'/>
-  </div>
+  return <div><Button/></div>
 };
 
 render(<App />, document.getElementById('react-app'));
