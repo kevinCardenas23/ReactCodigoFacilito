@@ -1,41 +1,29 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-// function SaludarEnIdiomas(idioma){
-//   if(idioma==='en') {
-//     return <span>Hello</span>
-//   }
-//   else{
-//     return <span>Hola</span>
+const nombres = [
+  'Uriel',
+  'Kevin',
+  'Juan',
+  'Pedro'
+]
 
-//   }
-// }
+function getNombres() {
+  const elementosLista = [];
+  for (var i = 0; i < nombres.length; i++) {
+    elementosLista.push(<li>{nombres[i]}</li>)
+  }
+  return elementosLista
+}
 
-const Saludo = () => {
-  const nombre = "Kevin";
-  const idioma = 'es';
-  //Esto es otra manera de hacer un if 
-  // return <div> 
-  //   {
-  //     idioma == 'es' && <p>Hola</p>
-  //   }
-  //   {
-  //     idioma == 'en' && <p>Hello</p>
-  //   }
-  // </div>
-  //Esta es otra manera
-  return <div>
-    {
-      idioma === 'en' ? <p>Hello</p> : <p>Hola</p>
-    }
-  </div>
+const Nombres = () => {
+  return <ul>{getNombres()}</ul>
 }
 
 const App = () => {
-  return <h1>
-    Hola mundo aa
-    <Saludo/>
-  </h1>;
+  return <div>
+    return <div><Nombres></Nombres></div>
+  </div>
 };
 
 render(<App />, document.getElementById('react-app'));
