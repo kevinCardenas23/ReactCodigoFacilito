@@ -8,18 +8,10 @@ const nombres = [
   'Pedro'
 ]
 
-// function getNombres() {
-//   const elementosLista = [];
-//   for (var i = 0; i < nombres.length; i++) {
-//     elementosLista.push(<li>{nombres[i]}</li>)
-//   }
-//   return elementosLista
-// }
-
 const Nombres = () => {
   return <ul>{
-    nombres.map(nombre => <li>{nombre}</li>)
-    }</ul>
+    nombres.map((nombre, index) => <li key={index}> {nombre}</li>)
+  }</ul>
 }
 
 const App = () => {
